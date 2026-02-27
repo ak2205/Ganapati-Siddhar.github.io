@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seshadri M S | Ganapati Siddhar</title>
+  <meta name="description" content="Devotional consultant – in-person and virtual consultations by appointment." />
+
+  <style>
+    :root{
+      --bg: #fff9f0;
+      --card: rgba(255,255,255,.78);
+      --text: #1f2328;
+      --muted: #5a616a;
+      --brand: #8a2b10;
+      --brand2: #c24a1a;
+      --ring: rgba(138,43,16,.20);
+      --shadow: 0 14px 40px rgba(0,0,0,.10);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1115;
+        --card: rgba(20,22,28,.78);
+        --text: #e9eef5;
+        --muted: #a8b3c3;
+        --brand: #ff8a4c;
+        --brand2: #ffb27a;
+        --ring: rgba(255,138,76,.22);
+        --shadow: 0 14px 40px rgba(0,0,0,.45);
+      }
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 10%, rgba(194,74,26,.18), transparent 55%),
+        radial-gradient(850px 520px at 78% 24%, rgba(138,43,16,.18), transparent 55%),
+        radial-gradient(700px 500px at 50% 95%, rgba(255,178,122,.10), transparent 60%),
+        var(--bg);
+      line-height:1.45;
+    }
+
+    .wrap{max-width:1000px; margin:0 auto; padding:26px 18px 54px}
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      padding:18px 18px 6px;
+    }
+    .brandmark{
+      width:54px; height:54px; border-radius:16px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(194,74,26,.22), rgba(138,43,16,.22));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 26px rgba(0,0,0,.10);
+      flex: 0 0 auto;
+    }
+    .brandmark span{font-size:26px}
+    .title h1{
+      margin:0;
+      font-size: clamp(22px, 2.6vw, 34px);
+      letter-spacing:.2px;
+    }
+    .title p{margin:6px 0 0; color:var(--muted)}
+    .top-actions{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      color:var(--text);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 26px rgba(0,0,0,.08);
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow); border-color: var(--ring)}
+    .btn.primary{
+      color:#fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border: 1px solid rgba(255,255,255,.20);
+    }
+    .btn small{opacity:.9}
+
+    .hero{ margin-top:14px; padding: 18px; }
+    .panel{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel-inner{
+      padding: 20px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+    }
+    @media (max-width: 840px){
+      .panel-inner{grid-template-columns:1fr}
+      header{flex-direction:column}
+      .top-actions{justify-content:flex-start}
+    }
+
+    .message{
+      padding: 16px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(138,43,16,.12), rgba(194,74,26,.10));
+      border: 1px solid var(--ring);
+    }
+    .message h2{margin:0 0 8px; font-size: 18px}
+    .message p{margin:0; color:var(--muted)}
+    .cta-row{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 720px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background: rgba(255,255,255,.60);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      .card{background: rgba(20,22,28,.68)}
+    }
+    .card h3{margin:0 0 6px; font-size: 14px; letter-spacing:.2px}
+    .card p{margin:0; color:var(--muted)}
+    .card a{color:inherit}
+    .mono{font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+    .qr{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+      text-align:center;
+      padding: 8px 6px;
+    }
+    /* Make QR always visible (white background) */
+    #maps-qr img, #maps-qr canvas{
+      background:#fff;
+      padding:8px;
+      border-radius:14px;
+      border: 1px solid rgba(255,255,255,.18);
+      width:190px;
+      height:190px;
+      display:block;
+    }
+    .qr p{margin:0; color:var(--muted); font-size: 13px}
+
+    footer{
+      margin-top: 16px;
+      padding: 14px 18px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <header>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <div class="brandmark" aria-hidden="true"><span>ॐ</span></div>
+          <div class="title">
+            <h1>Seshadri M S</h1>
+            <p>Ganapati Siddhar</p>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <a class="btn primary" href="tel:+919840219097" aria-label="Call +91 98402 19097">
+            Call <small class="mono">+91 98402 19097</small>
+          </a>
+          <a class="btn" href="mailto:ganapati.siddhar@gmail.com">
+            Email <small class="mono">ganapati.siddhar@gmail.com</small>
+          </a>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="panel-inner">
+          <div>
+            <div class="message">
+              <h2>Devotees, please call to book an appointment</h2>
+              <p>
+                Kindly call <span class="mono">+91 98402 19097</span> to book
+                in-person consultations in Chennai or to schedule a virtual appointment.
+              </p>
+              <div class="cta-row">
+                <a class="btn primary" href="tel:+919840219097">Book by calling</a>
+                <a class="btn" href="mailto:ganapati.siddhar@gmail.com?subject=Appointment%20Request">Request via email</a>
+              </div>
+            </div>
+
+            <div class="grid" aria-label="Contact details">
+              <div class="card">
+                <h3>Contact number</h3>
+                <p><a class="mono" href="tel:+919840219097">+91 98402 19097</a></p>
+              </div>
+
+              <div class="card">
+                <h3>Email ID</h3>
+                <p><a class="mono" href="mailto:ganapati.siddhar@gmail.com">ganapati.siddhar@gmail.com</a></p>
+              </div>
+
+              <div class="card">
+                <h3>Address</h3>
+                <p>
+                  138, KKR Homes, Madipakkam Main Road,<br/>
+                  Madipakkam, Chennai - 600091
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>Consultation mode</h3>
+                <p>In-person (Chennai) and virtual (by appointment)</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card">
+            <div class="qr">
+              <div id="maps-qr" aria-label="QR code"></div>
+
+              <p>Scan to open the exact location in Google Maps</p>
+
+              <p class="mono" style="margin:0; font-size:13px; opacity:.95;">
+                Coordinates: 12.968074, 80.1937043
+              </p>
+
+              <p style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:0;">
+                <a id="maps-link" class="btn" target="_blank" rel="noopener">
+                  Open by coordinates
+                </a>
+
+                <a class="btn"
+                   href="https://www.google.com/maps/place/JAIBAIRAVI+TRADERS/@12.968074,80.1937043,3a,75y,2.9h,88.26t/data=!3m7!1e1!3m5!1so1gKDbGm5bH0aNIabKrslQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.7383012117320789%26panoid%3Do1gKDbGm5bH0aNIabKrslQ%26yaw%3D2.899496938420974!7i16384!8i8192!4m16!1m9!3m8!1s0x3a525de7270be675:0x6e8afcee519dfc3e!2s66,+Madipakkam+Main+Rd,+Puzhuthivakkam,+Madipakkam,+Chennai,+Tamil+Nadu+600091!3b1!8m2!3d12.9681058!4d80.1939753!10e5!16s%2Fg%2F11spdd1smw!3m5!1s0x3a525de7283fe885:0x1800315fec2331bd!8m2!3d12.9681198!4d80.1936933!16s%2Fg%2F11t7mr_0k8?entry=ttu"
+                   target="_blank" rel="noopener">
+                  Open place details
+                </a>
+              </p>
+
+              <noscript>
+                <p style="margin-top:10px;">Enable JavaScript to display the QR code.</p>
+              </noscript>
+            </div>
+          </aside>
+        </div>
+
+        <footer>
+          © <span id="y"></span> Seshadri M S — Ganapati Siddhar. All consultations are by prior appointment.
+        </footer>
+      </section>
+    </div>
+  </div>
+
+  <!-- Open-source QR generator -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  <script>
+    // Location (exact pin)
+    const LAT = "12.968074";
+    const LNG = "80.1937043";
+
+    // Google Maps URL (Maps URLs format)
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(LAT + "," + LNG)}`;
+
+    // Set the button URL
+    document.getElementById("maps-link").href = mapsUrl;
+
+    // Render QR into #maps-qr
+    const qrEl = document.getElementById("maps-qr");
+    qrEl.innerHTML = "";
+    new QRCode(qrEl, {
+      text: mapsUrl,
+      width: 190,
+      height: 190,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+
+    // Footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
